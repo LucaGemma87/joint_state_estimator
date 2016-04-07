@@ -1,10 +1,24 @@
-joint_names: [left_arm_1_joint, left_arm_2_joint, left_arm_3_joint, left_arm_4_joint, left_arm_5_joint, left_arm_6_joint, left_arm_7_joint]
+joint_names: [left_arm_0_joint, left_arm_1_joint, left_arm_2_joint, left_arm_3_joint, left_arm_4_joint, left_arm_5_joint, left_arm_6_joint]
 
-#variance in [rad]
+#variance in [rad]  don't change value (best tuning in simulation)
 pos_meas_noise_var: 0.0000001 #0.001
-process_noise_var: [100.0, 100.0, 100.0] #[0.0, 0.0, 10.0]
-prior_var: [0.0001, 0.5, 0.5] #[0.0001, 0.5, 0.5]
+process_noise_var: [0.0001, 0.0001, 2000.0] #[0.0, 0.0, 10.0]
+prior_var: [0.0001, 0.0001, 100.0] #[0.0001, 0.5, 0.5]
 
-loop_frequency: 150
+loop_frequency: 50
 
-delta_t: 0.00667
+delta_t: 0.02
+
+
+############################################################################
+#                                                                          #
+#   FOR WILL OF GOD   DON'T CHANGE !!!!                                    #
+#   pos_meas_noise_var: 0.0000001                                          #
+#   process_noise_var: [0.0001, 0.0001, 2000.0]                            #
+#   prior_var: [0.0001, 0.0001, 100.0]                                     #
+#                                                                          #
+#   loop_frequency: 50                                                     #
+#                                                                          #
+#   delta_t: 0.02                                                          #
+#                                                                          #
+############################################################################

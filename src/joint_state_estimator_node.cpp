@@ -56,7 +56,11 @@ public:
 		n_ = ros::NodeHandle("~");
 
 		topicPub_EstimatedJointStates_ = n_.advertise<control_msgs::JointTrajectoryControllerState>("estimated_joint_state", 1);
-		topicSub_JointState_ = n_.subscribe("state", 1, &JointStateEstimatorNode::topicCallback_JointStates, this);
+ 		//topicSub_JointState_ = n_.subscribe("/left_arm/joint_trajectory_controller/state", 1, &JointStateEstimatorNode::topicCallback_JointStates, this);
+		
+  		topicSub_JointState_ = n_.subscribe("/left_arm/vs_computed_torque_controller/state", 1, &JointStateEstimatorNode::topicCallback_JointStates, this);
+		
+//    		topicSub_JointState_ = n_.subscribe("/lwr/vs_computed_torque_controller/state", 1, &JointStateEstimatorNode::topicCallback_JointStates, this);
 
 		m_last_filter_update = ros::Time::now();
 
